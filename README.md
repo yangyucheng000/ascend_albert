@@ -604,44 +604,25 @@ acc_num 8096 , total_num 9815, accuracy 0.824860
 
 ### Pretraining Performance
 
-| -------------------------- | ---------------------------------------------------------- | 
-| Model Version              | BERT_base                                                  |
-| Resource                   | Ascend 910; cpu 2.60GHz, 192cores; memory 755G; OS Euler2.8             |
-| uploaded Date              | 07/05/2021                                                 | 
-| MindSpore Version          | 1.3.0                                                      |
-| Dataset                    | cn-wiki-128(4000w)                                         | 
-| Training Parameters        | pretrain_config.yaml                                       | 
-| Optimizer                  | Lamb                                                       |
-| Loss Function              | SoftmaxCrossEntropy                                        | 
-| outputs                    | probability                                                | 
-| Epoch                      | 40                                                         | 
-| Batch_size                 | 256*8                                                      |
-| Loss                       | 1.7                                                        | 
-| Speed                      | 284ms/step                                                 |
-| Total time                 | 63H                                                        |
-| Params (M)                 | 110M                                                       |
-| Checkpoint for Fine tuning | 1.2G(.ckpt file)                                           |
-| Scripts                    | [BERT_base](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)  | 
 | Parameters                 | Ascend                                                     |
 | -------------------------- | ---------------------------------------------------------- |
-| Model Version              | BERT_NEZHA                                                 |
-| Resource                   | Ascend 910; cpu 2.60GHz, 192cores; memory 755G; OS Euler2.8              |
-| uploaded Date              | 07/05/2021                                                 |
-| MindSpore Version          | 1.3.0                                                      |
+| Model Version              | BERT_base                                                  | 
+| Resource                   | Ascend 910; cpu 2.60GHz, 192cores; memory 755G; OS Euler2.8             |
+| uploaded Date              | 07/05/2021                                                 | 
+| MindSpore Version          | 1.3.0                                                      | 
 | Dataset                    | cn-wiki-128(4000w)                                         |
-| Training Parameters        | src/config.py                                              |
-| Optimizer                  | Lamb                                                       |
-| Loss Function              | SoftmaxCrossEntropy                                        |
+| Training Parameters        | pretrain_config.yaml                                       | 
+| Optimizer                  | Lamb                                                       | 
+| Loss Function              | SoftmaxCrossEntropy                                        | 
 | outputs                    | probability                                                |
-| Epoch                      | 40                                                         |
-| Batch_size                 | 96*8                                                       |
-| Loss                       | 1.7                                                        |
-| Speed                      | 320ms/step                                                 |
-| Total time                 | 180h                                                       |
-| Params (M)                 | 340M                                                       |
-| Checkpoint for Fine tuning | 3.2G(.ckpt file)                                           |
-| Scripts                    | [BERT_NEZHA](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)  |
-
+| Epoch                      | 40                                                         | 
+| Batch_size                 | 256*8                                                      | 
+| Loss                       | 1.7                                                        | 
+| Speed                      | 284ms/step                                                 | 
+| Total time                 | 63H                                                        | 
+| Params (M)                 | 110M                                                       | 
+| Checkpoint for Fine tuning | 1.2G(.ckpt file)                                           | 
+| Scripts                    | [BERT_base](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)  | 
 #### Inference Performance
 
 | Parameters                 | Ascend                        |
