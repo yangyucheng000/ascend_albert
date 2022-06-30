@@ -467,15 +467,7 @@ epoch: 0.0, current epoch percent: 0.000, step: 2, outputs are (Tensor(shape=[1]
 ```
 
 
-```bash
-```
 
-The command above will run in the background, you can view the results the file pretraining_log.txt. After training, you will get some checkpoint files under the script folder by default. The loss value will be achieved as follows:
-
-```text
-# grep "epoch" pretraining_log.txt
-epoch: 0.0, current epoch percent: 0.000, step: 1, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.0856101e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
-epoch: 0.0, current epoch percent: 0.000, step: 2, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.0821701e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
 ...
 ```
 
@@ -513,19 +505,7 @@ epoch: 0.0, current epoch percent: 0.002, step: 200, outputs are (Tensor(shape=[
 ```
 
 
-```bash
-```
 
-The command above will run in the background, you can view the results the file pretraining_log.txt. After training, you will get some checkpoint files under the LOG* folder by default. The loss value will be achieved as follows:
-
-```text
-# grep "epoch" LOG*/pretraining_log.txt
-epoch: 0.0, current epoch percent: 0.001, step: 100, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.08209e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
-epoch: 0.0, current epoch percent: 0.002, step: 200, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.07566e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
-...
-epoch: 0.0, current epoch percent: 0.001, step: 100, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.08218e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
-epoch: 0.0, current epoch percent: 0.002, step: 200, outputs are (Tensor(shape=[1], dtype=Float32, [ 1.07770e+01]), Tensor(shape=[], dtype=Bool, False), Tensor(shape=[], dtype=Float32, 65536))
-...
 ```
 
 > **Attention** This will bind the processor cores according to the device_num and total processor numbers. If you don't expect to run pretraining with binding processor cores, remove the operations about taskset in scripts/ascend_distributed_launcher/get_distribute_pretrain_cmd.py
@@ -624,25 +604,24 @@ acc_num 8096 , total_num 9815, accuracy 0.824860
 
 ### Pretraining Performance
 
-| -------------------------- | ---------------------------------------------------------- | ------------------------- |
-| Model Version              | BERT_base                                                  | BERT_base                 |
-| Resource                   | Ascend 910; cpu 2.60GHz, 192cores; memory 755G; OS Euler2.8             | NV SMX2 V100-16G, cpu: Intel(R) Xeon(R) Platinum 8160 CPU @2.10GHz, memory: 256G         |
-| uploaded Date              | 07/05/2021                                                 | 07/05/2021                |
-| MindSpore Version          | 1.3.0                                                      | 1.3.0                     |
-| Dataset                    | cn-wiki-128(4000w)                                         | cn-wiki-128(4000w)        |
-| Training Parameters        | pretrain_config.yaml                                       | pretrain_config.yaml      |
-| Optimizer                  | Lamb                                                       | AdamWeightDecay           |
-| Loss Function              | SoftmaxCrossEntropy                                        | SoftmaxCrossEntropy       |
-| outputs                    | probability                                                | probability               |
-| Epoch                      | 40                                                         | 40                        |
-| Batch_size                 | 256*8                                                      | 32*8                      |
-| Loss                       | 1.7                                                        | 1.7                       |
-| Speed                      | 284ms/step                                                 | 180ms/step                |
-| Total time                 | 63H                                                        | 610H                      |
-| Params (M)                 | 110M                                                       | 110M                      |
-| Checkpoint for Fine tuning | 1.2G(.ckpt file)                                           | 1.2G(.ckpt file)          |
-| Scripts                    | [BERT_base](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)  | [BERT_base](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)     |
-
+| -------------------------- | ---------------------------------------------------------- | 
+| Model Version              | BERT_base                                                  |
+| Resource                   | Ascend 910; cpu 2.60GHz, 192cores; memory 755G; OS Euler2.8             |
+| uploaded Date              | 07/05/2021                                                 | 
+| MindSpore Version          | 1.3.0                                                      |
+| Dataset                    | cn-wiki-128(4000w)                                         | 
+| Training Parameters        | pretrain_config.yaml                                       | 
+| Optimizer                  | Lamb                                                       |
+| Loss Function              | SoftmaxCrossEntropy                                        | 
+| outputs                    | probability                                                | 
+| Epoch                      | 40                                                         | 
+| Batch_size                 | 256*8                                                      |
+| Loss                       | 1.7                                                        | 
+| Speed                      | 284ms/step                                                 |
+| Total time                 | 63H                                                        |
+| Params (M)                 | 110M                                                       |
+| Checkpoint for Fine tuning | 1.2G(.ckpt file)                                           |
+| Scripts                    | [BERT_base](https://gitee.com/mindspore/models/tree/master/official/nlp/bert)  | 
 | Parameters                 | Ascend                                                     |
 | -------------------------- | ---------------------------------------------------------- |
 | Model Version              | BERT_NEZHA                                                 |
